@@ -23,7 +23,7 @@
 # 
 # For better understanding let’s get started by visualizing the data in our CSV file using PANDAS library.
 
-# In[25]:
+# In[46]:
 
 
 import numpy as np
@@ -55,7 +55,7 @@ my_dataset.head()
 # 
 # Now let us implement this with and without python libraries
 
-# In[26]:
+# In[47]:
 
 
 #with library function
@@ -63,7 +63,7 @@ mean_with_libfunc=my_dataset.mean()
 print(mean_with_libfunc)
 
 
-# In[27]:
+# In[48]:
 
 
 #with library function for specific coloumn
@@ -71,7 +71,7 @@ average_with_libfunc=my_dataset['Mthly_HH_Income'].mean()
 print(average_with_libfunc)
 
 
-# In[28]:
+# In[49]:
 
 
 #without library function
@@ -98,7 +98,7 @@ print(mean_without_libfunc)
 # 
 # $$median=\frac{n+1}{2}^{th}term $$
 
-# In[29]:
+# In[50]:
 
 
 #with library function median()
@@ -106,7 +106,7 @@ med_with_libfunc=my_dataset.median()
 print(med_with_libfunc)
 
 
-# In[30]:
+# In[51]:
 
 
 #with library function median() for specific coloumn
@@ -114,7 +114,7 @@ med_with_libfunc=my_dataset['Mthly_HH_Income'].median()
 print(med_with_libfunc)
 
 
-# In[31]:
+# In[52]:
 
 
 #without library function
@@ -138,7 +138,7 @@ print(median_data)
 # 
 # A set of data may have one mode, more than one mode, or no mode at all.
 
-# In[32]:
+# In[53]:
 
 
 #with library function
@@ -146,7 +146,7 @@ mod_with_libfunc=my_dataset.mode()
 print(mod_with_libfunc)
 
 
-# In[33]:
+# In[54]:
 
 
 #with library function on a selected coloumn
@@ -154,7 +154,7 @@ mod_with_libfunc=my_dataset['Mthly_HH_Income'].mode()
 print(mod_with_libfunc)
 
 
-# In[34]:
+# In[55]:
 
 
 #without library function
@@ -187,7 +187,7 @@ my_mode(my_dataset['Mthly_HH_Income'])
 # $$\sigma^{2}=\frac{1}{n}\sum_{i=1}^{n}(x_i-\mu_x)^{2} $$
 # 
 
-# In[35]:
+# In[56]:
 
 
 #with library function
@@ -195,7 +195,7 @@ var_with_libfunc=np.var(my_dataset)
 print(var_with_libfunc)
 
 
-# In[36]:
+# In[57]:
 
 
 #with library function on selected coloumn
@@ -203,7 +203,7 @@ var_with_libfunc=np.var(my_dataset['Mthly_HH_Income'])
 print(var_with_libfunc)
 
 
-# In[37]:
+# In[58]:
 
 
 #without library function
@@ -234,7 +234,7 @@ print(my_variance)
 # $$\sigma=\sqrt{\frac{1}{n}\sum{i=1}^{n}(x{i}-\mu_{x})^{2}} $$
 # 
 
-# In[38]:
+# In[59]:
 
 
 #with library function
@@ -242,7 +242,7 @@ std_with_libfunc=np.std(my_dataset)
 print(std_with_libfunc)
 
 
-# In[39]:
+# In[60]:
 
 
 #with library function on selected coloumn
@@ -250,7 +250,7 @@ std_with_libfunc=np.std(my_dataset['Mthly_HH_Income'])
 print(std_with_libfunc)
 
 
-# In[40]:
+# In[61]:
 
 
 #without library function
@@ -276,7 +276,7 @@ print((sum_var/length)**0.5)
 # 
 # $\sigma_{x}$ is standard deviation of x and $\sigma_{y}$ is standard deviation of y.
 
-# In[41]:
+# In[62]:
 
 
 #with library function
@@ -284,7 +284,7 @@ corr_with_libfunc=my_dataset.corr()
 print(corr_with_libfunc)
 
 
-# In[42]:
+# In[63]:
 
 
 #without library function
@@ -336,7 +336,7 @@ print(correlation_data)
 # 
 # Approximately 99% of values in the distribution are within 3 SD of the mean.
 # P (µ - 3σ < X < µ + 3σ) = 0.99
-# ![image.png](attachment:image.png)
+# 
 
 # # Positively Skewed and Negatively Skewed Normal Distribution
 # 
@@ -360,8 +360,6 @@ print(correlation_data)
 # 1. It has a long left tail.
 # 2. The mean is on the left side of the peak.
 # 
-# ###### please refer below image for reference
-# ![image.png](attachment:image.png)
 
 # # Effect on Mean, Median and Mode due to Skewness
 # 
@@ -374,19 +372,17 @@ print(correlation_data)
 # If the distribution of data is skewed to the right(positively skewed), then the mode is often less than the median, which is less than the mean.
 # 
 #  #### i.e, mode < median < mean
-# ![image.png](attachment:image.png)
+# 
 
 # # QQ Plot and its implementation
 # 
 # A Q-Q plot is a scatterplot created by plotting two sets of quantiles against one another. If both sets of quantiles came from the same distribution, we should see the points forming a line that's roughly straight.
 # A 45-degree reference line is also plotted. If the two sets come from a population with the same distribution, the points should fall approximately along this reference line.
 # 
-# Heres a sample plot for reference
-# ![image.png](attachment:image.png)
 # 
 # ###### Now lets implement the qq plot to our given data frame
 
-# In[43]:
+# In[64]:
 
 
 stats.probplot(my_dataset['Mthly_HH_Income'], dist="norm",plot=plt)
@@ -399,20 +395,18 @@ plt.grid()
 # 
 # It transforms our data so that it closely as it resembles a normal distribution.
 # 
-# Heres a sample transformation plot for reference
-# ![image.png](attachment:image.png)
 # 
 # ###### Now lets implement it on our dataframe
 # 
 # ###### in the above example of q-q plot we have checked the normality of Mthly_HH_Income and now lets transform it more normal using box cox transformation and then we will check its normality
 
-# In[44]:
+# In[65]:
 
 
 x_t_income,l_income=stats.boxcox(my_dataset['Mthly_HH_Income']) #BOX-COX Transformation implemented
 
 
-# In[45]:
+# In[66]:
 
 
 stats.probplot(x_t_income,dist='norm',plot=plt)
